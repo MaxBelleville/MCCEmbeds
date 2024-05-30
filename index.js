@@ -5,7 +5,7 @@ class Embeds {
 
     async readEmbeddedFolder(folderName) {
         this.currentPath =folderName;
-        const fullpath= path.join(__dirname,folderName);
+        const fullpath= path.join(__dirname,"/"+folderName);
         try {
             await fs.access(fullpath, fs.constants.R_OK | fs.constants.W_OK)
             Embeds.parsedFiles[folderName] = {};
