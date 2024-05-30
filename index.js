@@ -4,8 +4,8 @@ class Embeds {
 
     async readEmbededFolder(folderName) {
         try {
-            await fs.access("./"+folderName, fs.constants.R_OK | fs.constants.W_OK)
-            const files = await fs.readdir("./"+folderName)
+            await fs.access(folderName, fs.constants.R_OK | fs.constants.W_OK)
+            const files = await fs.readdir(folderName)
             console.log(files);
         }
         catch {
