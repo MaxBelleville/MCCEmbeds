@@ -23,6 +23,7 @@ class Embeds {
             const statPath=await fs.stat(path);
             if(statPath.isDirectory()){
                 obj[path]={}
+                console.log(fullpath);
                 const updated = path.join(fullpath,"/"+path);
                 this.readItems(updated,obj[path])
             }
