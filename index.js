@@ -28,6 +28,7 @@ class Embeds {
                 this.readItems(updated,obj[path])
             }
             else if(statPath.isFile()){
+                console.log(updated);
                 const file = await fs.readFile(updated);
                 obj[path] = file;
             }
