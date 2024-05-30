@@ -13,3 +13,4 @@ class Embeds {
         }
     }  
 }
+module.exports = Embeds;
