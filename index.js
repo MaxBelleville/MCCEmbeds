@@ -9,7 +9,7 @@ class Embeds {
         try {
             await fs.access(fullpath, fs.constants.R_OK | fs.constants.W_OK)
             Embeds.parsedFiles[folderName] = {};
-            this.readItems(fullpath,Embeds.parsedFiles[folderName])
+            await this.readItems(fullpath,Embeds.parsedFiles[folderName])
             console.log(JSON.stringify(Embeds.parsedFiles));
         }
         catch (e) {
@@ -23,12 +23,11 @@ class Embeds {
             const statPath=await fs.stat(path);
             if(statPath.isDirectory()){
                 obj[path]={}
-                console.log(fullpath);
-                const updated = path.join(fullpath,"/"+path);
+                const updated = fullpath+"/"+path
                 this.readItems(updated,obj[path])
             }
             else if(statPath.isFile()){
-                const updated = path.join(fullpath,"/"+path);
+                const updated = fullpath+"/"+path
                 const file = await fs.readFile(updated);
                 obj[path] = file;
             }
