@@ -3,14 +3,14 @@ const path = require('path');
 class Embeds {
     static parsedFiles = {}
 
-    async readEmbeddedFolder(folderName) {
+    static async readEmbeddedFolder(folderName) {
         this.currentPath =folderName;
         const fullpath= path.join(__dirname,"/"+folderName);
         try {
             await fs.access(fullpath, fs.constants.R_OK | fs.constants.W_OK)
             if(!Embeds.parsedFiles[folderName]) {
             Embeds.parsedFiles[folderName] = {};
-            await this.readItems(fullpath,Embeds.parsedFiles[folderName])
+            await Embeds.readItems(fullpath,Embeds.parsedFiles[folderName])
             }
             else {
                 console.log("Duplicate embeds " + folderName)
@@ -21,14 +21,14 @@ class Embeds {
             console.error(e)
         }
     }  
-    async readItems(fullpath,obj) {
+    static async readItems(fullpath,obj) {
         const paths = await fs.readdir(fullpath)
         for(const path of paths) {
             const updated = fullpath+"/"+path;
             const statPath=await fs.stat(updated);
             if(statPath.isDirectory()){
                 obj[path]={}
-                this.readItems(updated,obj[path])
+                Embeds.readItems(updated,obj[path])
             }
             else if(statPath.isFile()){
                 const file = await fs.readFile(updated);
@@ -36,7 +36,7 @@ class Embeds {
             }
         }
     }
-    async getEmbedded() {
+    static async getEmbedded() {
         return Embeds.parsedFiles;
     }
 }
