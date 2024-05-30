@@ -28,7 +28,7 @@ class Embeds {
             const statPath=await fs.stat(updated);
             if(statPath.isDirectory()){
                 obj[path]={}
-                Embeds.readItems(updated,obj[path])
+                await Embeds.readItems(updated,obj[path])
             }
             else if(statPath.isFile()){
                 console.log(updated)
