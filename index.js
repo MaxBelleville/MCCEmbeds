@@ -36,7 +36,7 @@ class Embeds {
             }
         }
     }
-    static async getEmbedded() {
+    static getEmbedded() {
         return Embeds.parsedFiles;
     }
 }
