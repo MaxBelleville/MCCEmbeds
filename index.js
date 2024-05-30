@@ -18,7 +18,6 @@ class Embeds {
     }  
     async readItems(fullpath,obj) {
         const paths = await fs.readdir(fullpath)
-        console.log(fullpath);
         for(const path of paths) {
             const updated = fullpath+"/"+path;
             const statPath=await fs.stat(updated);
@@ -28,11 +27,12 @@ class Embeds {
             }
             else if(statPath.isFile()){
                 const file = await fs.readFile(updated);
-                obj[path] = file;
+                obj[path] = file.toString();
             }
         }
-        console.log(JSON.stringify(Embeds.parsedFiles));
-
+    }
+    async getEmbedded() {
+        return Embeds.parsedFiles;
     }
 }
 
