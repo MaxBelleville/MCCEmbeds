@@ -1,2 +1,5 @@
 # MCCEmbeds
-Embeded .mccfunctions you can import into datapacks using import "@[folder]"
+Embeded datapack resources for mccscript via import "@[folder]" 
+
+## Credits: 
+UUID generator by gibbsly: https://github.com/gibbsly/mud
