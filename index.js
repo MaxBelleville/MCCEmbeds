@@ -19,10 +19,12 @@ class Embeds {
     }  
     async readItems(fullpath,obj) {
         const paths = await fs.readdir(fullpath)
+        console.log(fullpath);
         for(const path of paths) {
             const statPath=await fs.stat(path);
             if(statPath.isDirectory()){
                 obj[path]={}
+
                 const updated = fullpath+"/"+path
                 this.readItems(updated,obj[path])
             }
