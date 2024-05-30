@@ -3,6 +3,7 @@ class Embeds {
     static parsedFiles = {}
 
     async readEmbeddedFolder(folderName) {
+        console.log(__dirname)
         try {
             await fs.access("./"+folderName, fs.constants.R_OK | fs.constants.W_OK)
             const files = await fs.readdir("./"+folderName)
