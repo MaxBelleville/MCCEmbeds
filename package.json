@@ -1,6 +1,6 @@
 {
   "name": "mccembeds",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "description": "Embed library for Mcc script",
   "main": "index.js",
   "scripts": {
