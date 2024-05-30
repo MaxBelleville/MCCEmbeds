@@ -23,10 +23,12 @@ class Embeds {
             const statPath=await fs.stat(path);
             if(statPath.isDirectory()){
                 obj[path]={}
-                this.readItems(fullpath+"/"+path,obj[path])
+                const updated = path.join(fullpath,"/"+path);
+                this.readItems(updated,obj[path])
             }
             else if(statPath.isFile()){
-                const file = await fs.readFile(fullpath+"/"+path);
+                const updated = path.join(fullpath,"/"+path);
+                const file = await fs.readFile(updated);
                 obj[path] = file;
             }
         }
