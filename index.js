@@ -8,8 +8,13 @@ class Embeds {
         const fullpath= path.join(__dirname,"/"+folderName);
         try {
             await fs.access(fullpath, fs.constants.R_OK | fs.constants.W_OK)
+            if(!Embeds.parsedFiles[folderName]) {
             Embeds.parsedFiles[folderName] = {};
             await this.readItems(fullpath,Embeds.parsedFiles[folderName])
+            }
+            else {
+                console.log("Duplicate embeds " + folderName)
+            }
         }
         catch (e) {
             console.log("No embed with the name "+ folderName +" found")
