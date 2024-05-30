@@ -10,7 +10,6 @@ class Embeds {
             await fs.access(fullpath, fs.constants.R_OK | fs.constants.W_OK)
             Embeds.parsedFiles[folderName] = {};
             await this.readItems(fullpath,Embeds.parsedFiles[folderName])
-            console.log(JSON.stringify(Embeds.parsedFiles));
         }
         catch (e) {
             console.log("No embed with the name "+ folderName +" found")
@@ -28,11 +27,11 @@ class Embeds {
                 this.readItems(updated,obj[path])
             }
             else if(statPath.isFile()){
-                console.log(updated);
                 const file = await fs.readFile(updated);
                 obj[path] = file;
             }
         }
+        console.log(JSON.stringify(Embeds.parsedFiles));
 
     }
 }
