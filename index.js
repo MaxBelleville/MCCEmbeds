@@ -42,6 +42,7 @@ class Embeds {
         const paths = await fs.readdir(fullpath)
         for(const path of paths) {
             const updated = fullpath+"/"+path;
+            if(updated !== fullpath+"/require.txt"){
             const statPath=await fs.stat(updated);
             if(statPath.isDirectory()){
                 obj[path]={}
@@ -50,6 +51,7 @@ class Embeds {
             else if(statPath.isFile()){
                 const file = await fs.readFile(updated);
                 obj[path] = file.toString();
+            }
             }
         }
     }
