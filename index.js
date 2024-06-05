@@ -54,7 +54,8 @@ class Embeds {
         }
     }
     static async readRequirements(path) {
-        const lines =await fs.readFile(path).split(/\r?\n/)
+        const file = await fs.readFile(path)
+        const lines =file.toString().split(/\r?\n/)
         for(const line of lines) {
             if(line.startsWith("r-")) {
                 const lib=line.replace("r-","")
