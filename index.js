@@ -67,6 +67,7 @@ class Embeds {
             }
             if(line.startsWith("l-")) {
                 const load=line.replace("l-","")
+                console.log(load)
                 Embeds.tags['load'].push(load)
             }
             if(line.startsWith("n-")) {
