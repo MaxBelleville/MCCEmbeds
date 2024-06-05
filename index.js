@@ -67,7 +67,6 @@ class Embeds {
             }
             if(line.startsWith("l-")) {
                 const load=line.replace("l-","")
-                console.log(load)
                 Embeds.tags['load'].push(load)
             }
             if(line.startsWith("n-")) {
@@ -86,6 +85,7 @@ class Embeds {
         return Embeds.parsedFiles;
     }
     static getLoadCalls() {
+        console.log(Embeds.tags['load'])
         return Embeds.tags['load'];
     }
     static getTickCalls() {
