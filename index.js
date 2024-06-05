@@ -85,7 +85,6 @@ class Embeds {
         return Embeds.parsedFiles;
     }
     static getLoadCalls() {
-        console.log(Embeds.tags['load'])
         return Embeds.tags['load'];
     }
     static getTickCalls() {
