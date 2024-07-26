@@ -1,8 +1,0 @@
-{
-    "replace": false,
-    "values": [
-        { "replace": false, "id": "minecraft:looting" },
-        { "replace": false, "id": "minecraft:fortune" },
-        { "replace": false, "id": "minecraft:luck_of_the_sea" }
-    ]
-}

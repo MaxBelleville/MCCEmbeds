@@ -1,1 +1,0 @@
-$data modify storage moxlib:api/string/concatenate output set value "$(target)$(suffix)"

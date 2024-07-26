@@ -1,1 +1,0 @@
-execute unless data storage moxlib:tui/private {lock:true} run function moxlib:tui/render/init

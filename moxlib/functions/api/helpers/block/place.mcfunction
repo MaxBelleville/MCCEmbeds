@@ -1,1 +1,0 @@
-function moxlib:helpers/block/place/init

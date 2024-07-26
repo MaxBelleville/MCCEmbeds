@@ -1,1 +1,0 @@
-function moxlib:math/power/init

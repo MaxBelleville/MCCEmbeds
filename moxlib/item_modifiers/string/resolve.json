@@ -1,9 +1,0 @@
-{
-  "function": "minecraft:set_name",
-  "entity": "this",
-  "name": {
-    "nbt": "target",
-    "storage": "moxlib:api/string/resolve",
-    "interpret": true
-  }
-}

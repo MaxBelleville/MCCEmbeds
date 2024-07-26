@@ -1,7 +1,0 @@
-{
-    "replace": false,
-    "values": [
-        { "replace": false, "id": "minecraft:infinity" },
-        { "replace": false, "id": "minecraft:loyalty" }
-    ]
-}

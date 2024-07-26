@@ -1,1 +1,0 @@
-execute unless data storage moxlib:helpers/private {lock:true} run function moxlib:helpers/inventory/compact/init

@@ -1,6 +1,0 @@
-{
-  "values": [
-    "moxlib:math/_load",
-    "moxlib:string/_load"
-  ]
-}
